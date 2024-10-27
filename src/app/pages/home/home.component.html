@@ -1,0 +1,102 @@
+<mat-toolbar color="primary">
+    <span class="logo">ShopEase</span>
+    <span class="spacer"></span>
+    <mat-form-field class="search-bar">
+       <input matInput placeholder="Search for products...">
+       <button mat-icon-button matSuffix><mat-icon>search</mat-icon></button>
+    </mat-form-field>
+    <span class="spacer"></span>
+    <button mat-icon-button>
+       <mat-icon>shopping_cart</mat-icon>
+       <span matBadge="3" matBadgeColor="warn"></span>
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+       <mat-icon>person</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+       <button mat-menu-item>Login</button>
+       <button mat-menu-item>Register</button>
+       <button mat-menu-item>My Account</button>
+    </mat-menu>
+ </mat-toolbar>
+ <mat-grid-list cols="3" rowHeight="250px">
+    <mat-grid-tile [colspan]="3" class="hero-banner">
+       <mat-card>
+          <img src="assets/banner.jpg" alt="Seasonal Sale Banner">
+          <mat-card-content>
+             <h2>Big Savings on Winter Collection!</h2>
+             <button mat-raised-button color="accent">Shop Now</button>
+          </mat-card-content>
+       </mat-card>
+    </mat-grid-tile>
+ </mat-grid-list>
+ <mat-grid-list cols="4" rowHeight="150px">
+    <mat-grid-tile *ngFor="let category of categories">
+       <mat-card>
+          <img mat-card-image [src]="category.imageUrl" alt="{{ category.name }}">
+          <mat-card-content>
+             <h3>{{ category.name }}</h3>
+          </mat-card-content>
+       </mat-card>
+    </mat-grid-tile>
+ </mat-grid-list>
+ <mat-button-toggle-group class="category-toggle">
+    <mat-button-toggle *ngFor="let tab of tabs" [value]="tab">{{ tab }}</mat-button-toggle>
+ </mat-button-toggle-group>
+ 
+ <div class="product-grid">
+    <mat-card *ngFor="let product of featuredProducts">
+       <img mat-card-image [src]="product.imageUrl" alt="{{ product.name }}">
+       <mat-card-title>{{ product.name }}</mat-card-title>
+       <mat-card-subtitle>{{ product.price | currency }}</mat-card-subtitle>
+       <mat-card-actions>
+          <button mat-button color="primary">Add to Cart</button>
+          <button mat-icon-button color="warn">
+             <mat-icon>favorite_border</mat-icon>
+          </button>
+       </mat-card-actions>
+    </mat-card>
+ </div>
+ <mat-grid-list cols="3" rowHeight="200px" class="promo-banners">
+    <mat-grid-tile *ngFor="let promo of promotions" [colspan]="1">
+       <mat-card>
+          <img mat-card-image [src]="promo.imageUrl" alt="{{ promo.title }}">
+          <mat-card-content>
+             <h3>{{ promo.title }}</h3>
+             <p>{{ promo.description }}</p>
+          </mat-card-content>
+       </mat-card>
+    </mat-grid-tile>
+ </mat-grid-list>
+ <mat-grid-list cols="3" rowHeight="180px">
+    <mat-grid-tile *ngFor="let review of reviews">
+       <mat-card>
+          <mat-card-header>
+             <div mat-card-avatar class="example-header-image"></div>
+             <mat-card-title>{{ review.user }}</mat-card-title>
+             <mat-card-subtitle>{{ review.date | date }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+             <p>{{ review.comment }}</p>
+             <mat-icon *ngFor="let i of [1,2,3,4,5]">
+                {{ i <= review.rating ? 'star' : 'star_border' }}
+             </mat-icon>
+          </mat-card-content>
+       </mat-card>
+    </mat-grid-tile>
+ </mat-grid-list>
+ <mat-toolbar color="primary">
+    <div class="footer-links">
+       <button mat-button>About Us</button>
+       <button mat-button>Contact</button>
+       <button mat-button>Privacy Policy</button>
+       <button mat-button>Terms of Service</button>
+    </div>
+    <span class="spacer"></span>
+    <div class="social-media">
+       <button mat-icon-button><mat-icon>facebook</mat-icon></button>
+       <button mat-icon-button><mat-icon>twitter</mat-icon></button>
+       <button mat-icon-button><mat-icon>instagram</mat-icon></button>
+    </div>
+ </mat-toolbar>
+       

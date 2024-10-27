@@ -1,0 +1,17 @@
+// theme.scss
+
+// @use '~@angular/material/theming';
+
+// // Include the common styles for Angular Material.
+// @include mat-core();
+
+// // Define your custom palette.
+// $azure-blue-primary: mat-palette($mat-blue, 500); // Adjust the shade as needed
+// $azure-blue-accent: mat-palette($mat-blue-grey, 300);
+// $azure-blue-warn: mat-palette($mat-red);
+
+// // Create the theme using the palettes.
+// $azure-blue-theme: mat-light-theme($azure-blue-primary, $azure-blue-accent, $azure-blue-warn);
+
+// // Include the theme styles.
+// @include angular-material-theme($azure-blue-theme);
