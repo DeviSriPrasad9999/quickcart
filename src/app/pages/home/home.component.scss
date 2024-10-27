@@ -1,0 +1,70 @@
+// app.component.scss
+
+$primary-color: #3f51b5; // Primary color
+$accent-color: #f50057; // Accent color
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.search-bar {
+  margin: 0 20px;
+  width: 300px;
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 20px 0;
+
+  mat-card {
+    width: calc(33.333% - 16px); // Three cards in a row with margin
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-media {
+  display: flex;
+
+  button {
+    margin-left: 10px;
+  }
+}
+
+.hero-banner {
+  text-align: center;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  h2 {
+    margin-top: 10px;
+  }
+}
+
+.promo-banners {
+  margin-top: 20px;
+}
